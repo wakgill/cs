@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="imagetoolbar" content="no" />    
+    <title>Online Fiction by Charles Stross - Charlie's Diary</title>
+    <meta name="generator" content="Movable Type Pro 5.2" />
+    
+
+    
+        
+        
+        
+        
+        
+        
+
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://www.antipope.org/charlie/blog-static/atom.xml" />
+        <link rel="start" href="http://www.antipope.org/charlie/blog-static/" title="Home" />
+<style>/* Base Theme ============================================================= */
+
+/* Reset ------------------------------------------------------------------ */
+
+/*
+    reset.css - resets default browser styling
+    http://tantek.com/log/2004/09.html#d06t2354
+    http://www.vox.com/.shared/css/base.css by beausmith.com
+    http://developer.yahoo.com/yui/reset/
+*/
+
+:link,:visited {
+    text-decoration: none;
+}
+html,body,div,
+ul,ol,li,dl,dt,dd,
+form,fieldset,input,textarea,
+h1,h2,h3,h4,h5,h6,pre,code,p,blockquote,hr,
+th,td {
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img,abbr,acronym {
+    border: 0;
+} 
+/* strict reset by uncommenting lines below */
+address,caption,cite,code,dfn,em,strong,b,u,s,i,th,var {
+    /* font-style: normal; */
+    /* font-weight: normal; */
+}
+
+ol,ul {
+    list-style: none;
+}
+caption,th {
+    text-align: left;
+}
+q:before,q:after {
+    content: '';
+}
+a {
+    text-decoration: underline;
+    outline: none;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    color: #000;
+}
+a img,:link img,:visited img {
+    border: none;
+}
+address {
+    font-style: normal;
+    display: inline;
+}
+
+
+/* Utilities ----------------------------------------------------------------- */
+
+.pkg:after, #content-inner:after {
+    content: " ";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0.1px;
+    font-size: 0.1em;
+    line-height: 0;
+}
+.pkg, #content-inner { display: block; }
+/* no ie mac \*/
+* html .pkg, * html #content-inner { height: 1%; }
+.pkg, #content-inner { display: block; }
+/* */
+
+.inline { display: inline; }
+.hidden { display: none; }
+
+
+
+/* Layout ----------------------------------------------------------------- */
+
+body {
+    text-align: center;
+    background: #fff;
+}
+
+#container-inner {
+    width: 940px;
+    min-height: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#header, #content, #alpha, #beta, #gamma, #footer {
+    position: relative;
+}
+
+#alpha, #beta, #gamma {
+    display: inline;
+    float: left;
+}
+
+#header-inner, #content-inner, #footer-inner,
+#alpha-inner, #beta-inner, #gamma-inner {
+    position: static;
+}
+
+#header-inner, #content-inner, #footer-inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#header-inner, #footer-inner,
+#alpha-inner, #beta-inner, #gamma-inner {
+    overflow: hidden;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+/* Wide-Thin-Thin */
+
+.layout-wtt #alpha {
+    width: 560px;
+}
+
+.layout-wtt #beta {
+    left: 190px;
+    width: 190px;
+}
+
+.layout-wtt #gamma {
+    right: 190px;
+    width: 190px;
+}
+
+
+/* Thin-Wide-Thin */
+
+.layout-twt #alpha {
+    left: 190px;
+    width: 560px;
+}
+
+.layout-twt #beta {
+    left: -560px;
+    width: 190px;
+}
+
+.layout-twt #gamma {
+    width: 190px;
+}
+
+
+/* Wide-Thin */
+
+.layout-wt #alpha {
+    width: 750px;
+}
+
+.layout-wt #beta {
+    width: 190px;
+}
+
+
+/* Thin-Wide */
+
+.layout-tw #alpha {
+    left: 190px;
+    width: 750px;
+}
+
+.layout-tw #beta {
+    left: -750px;
+    width: 190px;
+}
+
+
+/* Medium-Wide */
+
+.layout-mw #alpha {
+    left: 330px;
+    width: 610px;
+}
+
+.layout-mw #beta {
+    left: -610px;
+    width: 330px;
+}
+
+/* Wide-Medium */
+
+.layout-wm #alpha {
+    width: 610px;
+}
+
+.layout-wm #beta {
+    width: 330px;
+}
+
+
+/* Content ---------------------------------------------------------------- */
+
+a:link, a:visited {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, fieldset, ul, ol, dl {
+    margin-bottom: .75em;
+}
+
+blockquote, ol, ul {
+    margin-left: 30px;
+}
+
+ol { list-style: decimal outside; }
+ul { list-style: disc outside; }
+.item { list-style: none; }
+
+
+/* Header */
+
+#header-name {
+    margin-bottom: .25em;
+}
+
+#header-description {
+    margin-bottom: 0;
+}
+
+
+/* Assets */
+
+.asset-body,
+.asset-more,
+.asset-more-link,
+.asset-excerpt,
+.comment-content,
+.comment-footer,
+.comments-open-content,
+.comments-open-footer,
+.comments-closed,
+.trackbacks-info,
+.trackback-content,
+.trackback-footer,
+.archive-content {
+    clear: both;
+}
+
+.asset,
+.comments,
+.trackbacks,
+.archive {
+    overflow: hidden;
+    width: 100%;
+}
+
+.asset,
+.asset-content,
+.comments,
+.trackbacks,
+.archive {
+    position: static;
+    clear: both;
+}
+
+.asset,
+.comments,
+.comments-content,
+.trackbacks,
+.archive,
+.search-form {
+    margin-bottom: 1.5em;
+}
+
+.asset-header,
+.asset-content,
+.asset-body,
+.comments-header,
+.comment-content,
+.comment-footer,
+.comments-open-header,
+.comments-open-content,
+#comments-open-footer,
+.comments-closed,
+#comment-form-external-auth,
+#comment-greeting,
+.comments-open-moderated,
+#comment-form-name,
+#comment-form-email,
+#comment-form-url,
+#comment-form-remember-me,
+#comment-form-reply,
+#comments-open-text,
+.trackbacks-header,
+.trackbacks-info,
+.trackback-content,
+.trackback-footer,
+.archive-content,
+.search-form-header,
+.search-results-header {
+    margin-bottom: .75em;
+}
+
+#comment-form-remember-me label,
+#comment-form-reply label {
+    display: inline;
+}
+
+.entry-categories,
+.entry-tags {
+    margin-bottom: .5em;
+}
+
+.asset-name {
+    margin-bottom: .25em;
+}
+
+.asset-footer,
+.asset-meta {
+    font-size: 11px;
+}
+
+.asset-meta {
+    margin-top: .25em;
+    padding-top: 2px;
+    padding-bottom: .3em;
+    font-weight: normal;
+}
+
+.asset-footer {
+    clear: both;
+    margin-top: 1.5em;
+    padding-top: .5em;
+}
+
+.content-nav {
+    text-align: center;
+}
+
+.entry-tags h4,
+.entry-categories h4 {
+    margin-bottom: 0;
+    margin-right: .25em;
+    display: inline;
+    font-weight: bold;
+}
+
+.entry-tags ul,
+.entry-categories ul {
+    display: inline;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+.entry-tags ul li,
+.entry-categories ul li {
+    display: inline;
+}
+
+.mt-image-left {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.mt-image-center {
+    display: block;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.mt-image-right {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+
+/* User pics */
+
+
+.user-pic {
+    float: left;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 0 10px 0 0;
+}
+
+.auth-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* Feedback */
+
+.comments-open label {
+    display: block;
+}
+
+#comment-author, #comment-email, #comment-url, #comment-text {
+    width: 80%;
+}
+
+#comment-bake-cookie {
+    margin-left: 0;
+    vertical-align: middle;
+}
+
+#top-comment-nav, #comment-nav {
+  list-style: none;
+  width: 100%;
+  margin: 0 0 1em 0;
+  padding: 0;
+  text-align: center;
+}
+
+#top-comment-nav li, #comment-nav li {
+  display: inline;
+  padding: 0;
+}
+
+#top-prev-comments, #prev-comments {
+  text-align: left;
+  margin: 0 1em 0 0;
+}
+
+#top-next-comments, #next-comments {
+  text-align: right;
+  margin: 0 0 0 1em;
+}
+
+#top-num-comments, #num-comments {
+  text-align: center;
+}
+
+#comment-submit {
+    font-weight: bold;
+}
+
+.comment,
+.trackback {
+    margin-bottom: .5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: .5em;
+}
+
+.comment .asset-meta,
+.trackback .asset-meta {
+    border: 0;
+}
+
+.comment-content {
+    clear: none;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.comment-content p {
+    margin-bottom: .5em;
+}
+
+/* Widgets */
+
+.widget {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.widget-content {
+    position: relative;
+    margin: 5px 0 20px;
+}
+
+.archive-content ul,
+.widget-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.widget-content ul ul {
+    margin-left: 15px;
+}
+
+.widget-content li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.widget-tag-cloud .widget-content ul {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.widget-tag-cloud .widget-content li {
+    display: inline;
+    margin: 0 5px 0 0;
+    padding: 0;
+    line-height: 1.6;
+    background: none;
+}
+
+.widget-tag-cloud .rank-1  { font-size: 1.75em; }
+.widget-tag-cloud .rank-2  { font-size: 1.75em; }
+.widget-tag-cloud .rank-3  { font-size: 1.625em; }
+.widget-tag-cloud .rank-4  { font-size: 1.5em; }
+.widget-tag-cloud .rank-5  { font-size: 1.375em; }
+.widget-tag-cloud .rank-6  { font-size: 1.25em; }
+.widget-tag-cloud .rank-7  { font-size: 1.125em; }
+.widget-tag-cloud .rank-8  { font-size: 1em; }
+.widget-tag-cloud .rank-9  { font-size: 0.95em; }
+.widget-tag-cloud .rank-10 { font-size: 0.9em; }
+
+#footer .widget-content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.widget-recent-assets .widget-content ul {
+    overflow: auto;
+    margin-right: 0;
+}
+
+.item {
+    display: inline;
+    float: left;
+    margin: 0pt 5px 8px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+}
+
+.widget-search ul,
+.widget-syndication ul {
+    margin-left: 0;
+    list-style: none;
+}
+
+.widget-search li,
+.widget-syndication li  {
+    margin: 5px 0;
+}
+
+.widget-openid {
+    width: 160px;
+    margin: 10px auto;
+    border: none !important;
+}
+.widget-openid .widget-content {
+    border: 1px solid #ccc;
+    background: #fff url(../images/openid-accepted.gif) no-repeat 7px 3px;
+    font-size: 12px;
+    font-family: Arial, Verdana, sans-serif;
+    color: #666;
+    margin: 0;
+    padding: 0 !important;
+}
+.widget-openid .widget-content em {
+    display: block;
+    font-style: normal;
+    padding: 34px 9px 9px 68px;
+}
+.widget-openid .widget-content strong {
+    left: -9999px;
+    position: absolute;
+}
+.widget-openid .widget-content a {
+    display: block;
+    background: #eee;
+    text-align: center;
+    padding: 5px 3px;
+    color: #666;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.widget-calendar .widget-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.widget-calendar .widget-content th, 
+.widget-calendar .widget-content td {
+    text-align: center;
+    width: 14%;
+    padding: 2px 0;
+}
+
+.input-default {
+    background-color: #9AAEC2;
+}
+
+.status-indicator {
+    display: inline;
+    height: 20px;
+    width: 20px;
+    background: url(../images/indicator-login.gif) no-repeat 0 0;
+    padding: 2px 7px;
+}
+
+@media print {
+    * {
+        position: static ! important;
+        overflow: visible ! important;
+    }
+}
+  
+  
+        
+    
+
+
+    
+    
+    <!-- <script type="text/javascript" src="http://www.antipope.org/charlie/adblockbar.js"></script> -->
+
+
+</head>
+<body id="mt-community-blog" class="mt-page-archive layout-wm">
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <div id="header-content">
+
+                        <div id="header-name"><a href="http://www.antipope.org/charlie/blog-static/" accesskey="1">Charlie's Diary</a></div>
+    
+                        <div id="header-description">Being the blog of Charles Stross, author, and occasional guests ... </div>
+    
+
+                      <!-- <div class="header-search">
+    <form method="get" action="http://www.antipope.org/mt/mt-search.cgi">
+
+        <input type="hidden" name="IncludeBlogs" value="1" />
+
+        <input type="hidden" name="limit" value="20" />
+        <label for="search">Search</label>
+        <input id="search" class="query" name="search" value="" />
+        <input class="submit" type="submit" value="Go" />
+    </form>
+</div>
+ -->
+<div id="header-menu">
+<p class="navigation">
+
+        [ <a href="http://www.antipope.org/charlie/blog-static/">Home</a> ] 
+        [ <a href="http://www.antipope.org/charlie/blog-static/fiction/faq.html">FAQ</a> ] 
+        [ <a href="http://www.antipope.org/charlie/who_am_i/foo.cgi">Contact me</a> ] 
+        [ <a href="http://www.antipope.org/charlie/old/index.html">Older stuff</a> ]
+
+    </p>
+</div>
+
+                   </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+
+<div id="page-2910" class="page-asset asset">
+    <div class="asset-header">
+        <h1 id="page-title" class="asset-name">Online Fiction by Charles Stross</h1>
+    </div>
+    <div class="asset-content">
+
+        <div class="asset-body">
+            <p>If you're looking for an overview of my books, you want to <a href="faq.html">read the FAQ</a>.</p>
+
+<p>There are a number of works of fiction online on my website: notably the full text of my first short story collection, <b><a href="toast/toast-intro.html">TOAST</a></b>, the novel <b><a href="accelerando/accelerando-intro.html">Accelerando</a></b>,  a trunk novel, <b><a href="scratch-monkey/how-not-to-sell-a-novel.html">Scratch Monkey</a></b>, and my collaboration with Cory Doctorow, <b><a href="http://www.antipope.org/charlie/blog-static/fiction/nerds/Cory_Doctorow_and_Charles_Stross_-_Rapture_of_the_Nerds.html">The Rapture of the Nerds</a></b>. </p>
+
+<p>What follows is, inasmuch as I can construct one, a bibliography of my short fiction sales. In some cases (where I'm not too embarrassed by work I published twenty or more years ago) there may also be links to the stories in question.<br />
+	 <dl><br />
+<dt><b><a href="http://www.tor.com/stories/2012/07/a-tall-tail">A Tall Tale</a></b></dt><br />
+<dd>Short story, published on <a href="http://www.tor.com/stories/2012/07/a-tall-tail">Tor.com</a></dd><br />
+         <dt><b>Bit Rot</b></dt><br />
+         <dd>Short story (set in the same universe as "Saturn's Children") forthcoming in the anthology "Engineering Infinity", ed. Jonathan Strahan.</dd><br />
+	 <dt><b><a href="http://www.tor.com/index.php?option=com_content&view=story&id=58511">Overtime</a></b></dt><br />
+         <dd>Another Laundry novelette, published on Tor.com, December 2009. Shortlisted for Hugo award, 2010.</dd><br />
+     <dt><b><a href="http://www.antipope.org/charlie/blog-static/palimpsest-intro.html">Palimpsest</a></b></dt><br />
+         <dd>Novella, exclusive to my "Wireless" collection, July 2009. Shortlisted for Hugo award, 2010. </dd><br />
+         <dt><b><a href="http://www.tor.com/index.php?option=com_content&view=story&id=61">Down on the Farm</a></b></dt><br />
+         <dd>Laundry novelette, published on Tor.com, 2008.</dd><br />
+	     <dt><b>Trunk and Disorderly</b></dt><br />
+	     <dd>Novella, published in Asimov's SF, January 2007. </dd><br />
+	     <dt><b>Minutes of the Labour Party Conference, 2016</b></dt><br />
+	     <dd>Short-short, published in the anthology, "Glorifying Terrorism", late 2006.</dd><br />
+	     <dt><b>Missile Gap</b></dt><br />
+	     <dd>Novella, published in "One Million Years AD", ed. Gardner Dozois, January 2006. (To be republished in a limited edition hardcover by Subterranean Press in 2007.) Collected in "Wireless".</dd><br />
+	     <dt><b>MAXOS</b></dt><br />
+	     <dd>Short-short published in Nature's "Futures" slot, September 2005.</dd><br />
+	     <dt><b>Snowball's Chance</b></dt><br />
+	     <dd>Short story published in "Nova Scotia", the new anthology of Scottish SF, August 2005.</dd><br />
+             <dt><B>Pimpf</B></dt><br />
+            <dd>Short spin-off from "The Jennifer Morgue" (sequel to "The Atrocity Archives"); published in  issue #1 of <a href="http://www.baensuniverse.com/">Baen's Universe</a> magazine. Republished in "The Jennifer Morgue".</dd><br />
+             <dt><B>Appeals Court</B></dt><br />
+            <dd>Collaboration with Cory Doctorow; sequel to "Jury Service", published back-to-back with "Jury Service" in a chapbook bundled with issue #2 of <A HREF="http://www.argosymag.com/">Argosy Magazine</A>  as "The Rapture of the Nerds" in early 2004.</dd><br />
+            <dt><B>Survivor</B></dt><br />
+            <dd>Ninth and last in the series beginning with "Lobsters". (Published in December 2004 issue of Asimov's SF.) These stories have effectively been reworked into the novel  "Accelerando".</dd><br />
+            <dt><B>Elector</B></dt><br />
+            <dd>Eighth in the series beginning with "Lobsters". </dd><br />
+            <dt><B><A HREF="http://craphound.com/unwirer/">Unwirer</A></B> </dt><br />
+            <dd>Collaboration with Cory Doctorow, published in <A HREF="http://www.ffbooks.co.uk/t0/t4860.htm">ReVisions</A>,  an alternate science fiction history anthology from DAW books, edited by Isaac Szpindel and Julie Czerneda.</dd><br />
+            <dt><B>Curator</B></dt><br />
+            <dd>Seventh in the series beginning with "Lobsters" (published in Asimov's SF, Dec 2003 issue)</dd><br />
+	    <dt><b>The Concrete Jungle</a></b>(<em>No longer online</em>)</dt><br />
+	    <dd>Novella, sequel to the short novel "The Atrocity Archive",  published together with it in "The Atrocity Archives", April 2004.</dd><br />
+            <dt><B>Flowers from Al</B></dt><br />
+            <dd>(Co-written with Cory Doctorow) -- published in "New Faces in Science Fiction", ed. Mike Resnick. </dd><br />
+            <dt><B>Jury Service</B></dt><br />
+            <dd> (Co-written with Cory Doctorow) -- novella, online at  <A HREF="http://www.scifi.com/">SciFi.com</A>.</dd><br />
+            <dt><B>Nightfall</B></dt><br />
+            <dd> Sixth in the series beginning with "Lobsters"  (published in Asimov's SF in the April 2003 issue). Shortlisted for the 2004 BSFA award. Shortlisted for the 2004 Hugo award for best novelette.</dd><br />
+            <dt><B>Rogue Farm</B></dt><br />
+            <dd>Published in "Live without a Net" (edited by Lou Anders, published by Roc.) A <A HREF="http://www.roguefarm.com/">short film adaptation</A> also exists.</dd><br />
+            <dt><B>Router</B></dt><br />
+            <dd>Fifth in the series beginning with "Lobsters", published in Asimov's SF in the September 2002 issue. Shortlisted for the 2002 BSFA award.</dd><br />
+<dt><B>Halo</B></dt><br />
+            <dd>Fourth in the series beginning with "Lobsters", published in Asimov's SF, in the June 2002 issue. Shortlisted for the 2002 Hugo award and the Sturgeon award.</dd><br />
+            <dt><B>Tourist</B></dt><br />
+            <dd>Third in the series beginning with "Lobsters" and "Troubadour"; published in Asimov's SF in the February 2002 issue.</dd><br />
+            <dt><B>Troubadour</B></dt><br />
+            <dd>Sequel to "Lobsters"; published in the October/November 2001 issue of <A HREF="http://www.asimovs.com/">Asimov's SF</A>.</dd><br />
+            <dt><B>Lobsters</B></dt><br />
+            <dd>Published in Asimov's SF Magazine, June 2001.  Re-published in Ikarie (Czech SF magazine), republished in Year's Best SF #19 (ed. Gardner Dozois), the 2003 Nebula Awards anthology, and elsewhere ... Shortlisted in the novelette category in both the 2002 <A HREF="http://worldcon.org/hugos.html">Hugo</A> and Nebula awards; runner-up for the 2002 Sturgeon award.</dd><br />
+            <dt><B>Big Brother Iron</B></dt><br />
+            <dd>Novella, available only in the <B>Toast</B> collection.</dd><br />
+            <dt><B><a href="http://www.infinityplus.co.uk/stories/colderwar.htm">A Colder War</a></B> </dt><br />
+            <dd>Published in Spectrum SF #3, Summer 2000; republished in "The Year's Best Science Fiction #18" (ed. Gardner Dozois, 2001).</dd><br />
+            <dt><B>Antibodies</B> </dt><br />
+            <dd>Published in Interzone #157; republished in "The Year's Best Science Fiction #18" (ed. Gardner Dozois). Mentioned in Locus' "Recommended Reading List" for 2000.<br />
+               Shortlisted for the 2001 <A HREF="http://falcon.cc.ku.edu/~sfcenter/sturgeon.htm">Theodore Sturgeon Award</A>.</dd><br />
+            <dt><B>Bear Trap</B></dt><br />
+            <dd>Published in  Spectrum SF  issue #1 (January 2000). Mentioned in Locus' "Recommended Reading List" for 2000.</dd><br />
+	    <dt><B>Toast: A Con Report</B></dt><br />
+	    <dd>Published Interzone, August 1998; reprinted in "The best of the rest #2" 1999, and "Supermen: Tales of the Posthuman Future" (ed. Gardner Dozois, 2001).</dd><br />
+	    <dt><b>Extracts from the Club Diary</b></dt><br />
+	    <dd>Published in <A HREF="http://www.jeapes.ndirect.co.uk/odyssey/">Odyssey</A> (1998).</dd><br />
+	    <dt><b>A Boy and His God</b></dt><br />
+	    <dd>Published in  <b>Odyssey 3</b> (1998).</dd><br />
+	    <dt><b>Dechlorinating the Moderator</b></dt><br />
+	    <dd>Published in  <b>Interzone 101</b> (1996).  </dd><br />
+	    <dt><b>Tarkovsky's Cut</b></dt>	    <br />
+<dd>Collaboration with Simon Ings, published in <B>New Worlds #3</B> (1991) </dd><br />
+	    <dt><b>Ship of Fools</b </dt><br />
+	    <dd>Published in  <b>Interzone 98</b> (June 1995).  </dd><br />
+	    <dt><b>Examination Night</b></dt><br />
+<dd>Published in  <b>Villains</b>, ed. Mary Gentle (Penguin 1992, UK).  </dd><br />
+	    <dt><b>Yellow Snow</b></dt><br />
+	    <dd>First published in  <b>Interzone</b> 37 (July 1990).	</dd><br />
+	    <dt><b>The Boys</b></dt><br />
+	    <dd>Published in  <b>Interzone</b> 21, in 1987: first professional sale. </dd><br />
+	    <dt><b>SEAQ and Destroy</b></dt><br />
+	    <dd>Published in  <b>There Won't Be War</b>, in 1992. (Written in 1988, hence anachronisms.)</dd><br />
+	    <dt><b>The Midlist Bombers</b></dt><br />
+	    <dd>Published in issue 4 of <b>Farpoint</b>; magazine folded at issue 5, in 1991. </dd><br />
+	    <dt><b>Generation Gap</b></dt><br />
+	       <dd>Published in  <b>Interzone</b>, issue thirty-something. </dd><br />
+	    <dt><b>Ancient of Days</b></dt><br />
+	    <dd>Published in volume 1 of a series of shared universe anthologies edited by Roz Kaveney (<b>The Weerde</b>, 1991).</dd><br />
+	    <dt><b>Red, Hot and Dark</b></dt><br />
+	    <dd>Sequel to  <b>Ancient of Days</b>. From <b>The Weerde</b> #2.</dd><br />
+	    <dt><b>Something Sweet</b></dt><br />
+	    <dd>From  <b>New Worlds #1</b>: collaboration with Simon Ings.</dd><br />
+         </dl><br />
+	 </p>
+        </div>
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+
+
+
+
+</div>
+                    </div>
+
+                    <div id="beta">
+    <div id="beta-inner">
+        
+
+
+<div class="widget-buy-my-books widget">
+<h3 class="widget-header-no-arrow">Buy my Books</h3>
+    <div class="widget-content">
+<ul>
+<li><a href="http://www.antipope.org/charlie/blog-static/buy-my-books/buy-my-books-us.html">US English editions</a></li>
+<li><a href="http://www.antipope.org/charlie/blog-static/buy-my-books/buy-my-books-uk.html">UK English editions</a></li>
+<li><a href="http://www.antipope.org/charlie/blog-static/buy-my-books/buy-my-books-de.html" hreflang="de">Deutsche Ausgaben</a></li>
+<li><a href="http://www.antipope.org/charlie/blog-static/buy-my-books/buy-my-books-jp.html">&#26085;&#26412;&#35486;&#12398;&#26412;</a></li>
+</ul>
+    </div> <!-- widget content -->
+</div> <!-- widget-buy-my-books widget --><div class="widget-quick-stuff widget">
+<h3 class="widget-header-no-arrow">Quick Stuff</h3>
+    <div class="widget-content">
+<ul>
+<li><a href="http://www.antipope.org/charlie/blog-static/fiction/faq.html"><strong>FAQ:</strong> Who am I?</a></li>
+
+<li><a href="http://www.antipope.org/charlie/blog-static/2008/06/moderation-policy.html"><strong>FAQ:</strong> Moderation Policy</a></li>
+
+<li><a href="http://www.antipope.org/charlie/blog-static/2009/03/reminder-why-theres-no-tipjar.html"><strong>FAQ:</strong> Why is there no tipjar?</a></li>
+
+<li><a href="http://www.antipope.org/charlie/blog-static/faq-copyright-and-fair-usagefa.html"><strong>FAQ:</strong> Copyright Notice</a></li>
+
+<li><a href="http://www.antipope.org/charlie/blog-static/2009/07/faq-inviting-charles-stross-to.html"><strong>FAQ:</strong> Inviting Charles Stross to speak</a></li>
+
+<li><a href="http://www.antipope.org/charlie/blog-static/2010/05/faq-fanfic.html"><strong>FAQ:</strong> Fan Fiction</a></li>
+
+<li><a href="http://www.antipope.org/charlie/blog-static/fiction/online-fiction-by-charles-stro.html">Bibliography and online fiction</a></li>
+
+<li><a href="http://www.antipope.org/charlie/blog-static/2016/04/faq-the-laundry-filesseries-ti.html"><strong>FAQ:</strong> Laundry Files reading order</a></li>
+
+<li><a href="http://www.antipope.org/charlie/who_am_i/foo.cgi">Talk to me</a></li>
+
+<li><a href="http://www.antipope.org/charlie/old/">Non-blog writing (old)</a></li>
+
+    
+    </ul>
+</div> <!-- widget content -->
+</div> <!-- widget-quick-stuff widget -->
+<!-- make the linked articles into pages where appropriate -->
+
+<div class="widget-specials widget">
+<h3 class="widget-header-no-arrow">Specials</h3>
+    <div class="widget-content">
+<ul>
+<li><strong><a href="http://www.antipope.org/charlie/blog-static/2010/04/common-misconceptions-about-pu-1.html">Common Misconceptions About Publishing</a></strong>&#8212;a series of essays about the industry I work in.</li>
+
+<li><strong><a href="http://www.antipope.org/charlie/blog-static/2009/07/how-i-got-here-in-the-end-my-n.html">How I Got Here In The End</a>
+</strong>&#8212;my non-writing autobiography, or what I did <em>before</em> becoming a full-time writer.</li>
+
+<li><strong><a href="http://craphound.com/unwirer/">Unwirer</a></strong>&#8212;an experiment in weblog mediated collaborative fiction.</li>
+
+<li><strong><a
+	href="http://www.antipope.org/charlie/blog-static/2007/05/shaping-the-future.html">Shaping the Future</a></strong>&#8212;a talk I gave on the social implications of Moore's Law.</li>
+	
+<li><strong><a href="http://www.antipope.org/charlie/blog-static//2007/11/japan-some-impressions.html">Japan: first impressions</a></strong> &mdash; or, what I did on my holidays</li>
+
+<li><strong><a
+	href="http://www.antipope.org/charlie/blog-static/rants/inside-the-mit-media-lab.html">Inside
+	the MIT Media Lab</a></strong>&#8212;what it&#8217;s like to spend a day
+	wandering around the Media Lab.</li>
+	
+       <li><strong><a href="http://www.antipope.org/charlie/blog-static/2007/06/the-high-frontier-redux.html">The High Frontier, Redux</a></strong> &mdash; space colonization: feasible or futile?</li>
+
+	<li><strong><a
+	href="http://www.antipope.org/charlie/blog-static/rants/nothing-like-this-will-be-buil.html">&#8220;Nothing
+	like this will be built again&#8221;</a></strong>&#8212;inside a nuclear
+	reactor complex.</li>
+  
+        <li><strong><a href="http://www.antipope.org/charlie/old/blog-old/">Old blog</a></strong>&#8212;2003-2006 (RIP)</li>
+
+	</ul>
+</div> <!-- widget content -->
+</div> <!-- widget-specials widget -->
+<div class="widget-merchandise widget">
+<h3 class="widget-header-no-arrow">Merchandise</h3>
+    <div class="widget-content">
+
+    <script language="javascript" src="http://www.zazzle.co.uk/api/zp/zpanel?zp=117591722793668867"></script>
+    
+</div> <!-- widget content -->
+</div> <!-- widget-other-blogs widget -->
+<div class="widget-about-this-page widget">
+    <h3 class="widget-header-no-arrow">
+
+        About this Archive
+
+    </h3>
+    <div class="widget-content">
+
+        <p>Find recent content on the <a href="http://www.antipope.org/charlie/blog-static/">main index</a> or look in the <a href="http://www.antipope.org/charlie/blog-static/archives.html">archives</a> to find all content.</p>
+    </div>
+</div>
+
+<div class="widget">
+    <h3 class="widget-header-no-arrow">Search this blog</h3>
+    <div class="widget-search widget-content">
+        <form method="get" action="http://www.antipope.org/mt/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="1" />
+            <input type="hidden" name="limit" value="20" />
+
+            <input type="submit" accesskey="4" value="Search" />
+        </form>
+    </div>
+</div>
+
+<div class="widget-propaganda widget">
+<h3 class="widget-header-no-arrow">Propaganda</h3>
+    <div class="widget-content">
+
+<a href="http://www.openrightsgroup.org/"><img src="http://widgets.openrightsgroup.org/founding1000/since/223224.png" /></a>
+
+</div> <!-- widget content -->
+</div> <!-- widget-propaganda widget -->
+
+        <div class="widget-archive widget-archive-category widget">
+    <h3 class="widget-header-no-arrow">Categories</h3>
+    <div class="widget-content">
+    
+        
+        <ul>
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/administrative/">Administrative (5)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/computers/">Computers (10)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/gadget-patrol/">Gadget Patrol (7)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/humour/">Humour (12)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/news/">News (6)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/politics/">Politics (15)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/publicity-stuff/">Publicity stuff (11)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/publishing/">Publishing (19)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/travel/">Travel (7)</a>
+        
+        
+            </li>
+        
+    
+        
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/writing/">Writing (37)</a>
+        
+        
+            </li>
+        
+        </ul>
+        
+    
+    </div>
+</div>
+
+
+
+    <div class="widget-archive-monthly widget-archive widget">
+    <h3 class="widget-header-no-arrow">Monthly <a href="http://www.antipope.org/charlie/blog-static/archives.html">Archives</a></h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2020/01/">January 2020 (2)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/12/">December 2019 (2)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/11/">November 2019 (2)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/10/">October 2019 (4)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/09/">September 2019 (1)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/08/">August 2019 (2)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/07/">July 2019 (2)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/06/">June 2019 (2)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/05/">May 2019 (1)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/04/">April 2019 (4)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/03/">March 2019 (2)</a></li>
+        
+    
+        
+            <li><a href="http://www.antipope.org/charlie/blog-static/2019/02/">February 2019 (2)</a></li>
+        
+        </ul>
+<a href="http://www.antipope.org/charlie/blog-static/archives.html">Earlier, and other types of archive.</a>
+    </div>
+</div>
+        
+    
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footer-inner">
+                    <div id="footer-content">
+<!--
+                        <div class="widget-powered widget">
+                            <div class="widget-content">
+                                <span>Powered by <a href="http://www.movabletype.com/" rel="generator">Movable Type Pro</a></span>
+                            </div>
+-->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
